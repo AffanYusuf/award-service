@@ -26,11 +26,13 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
-Create DB First
-Setup your environtment variables in .env file
+## Preparation
 
-Next Install Packge
+- Create Database MySQL first
+- Setup your environtment variables in .env file
+- Next Install Packge with npm
+
+## Installation
 ```bash
 $ npm install
 ```
