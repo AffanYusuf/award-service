@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"paths": {
+			"@src/*": ["src/*"],
+			"@config/*": ["src/config/*"],
+			"@constants/*": ["src/constants/*"],
+			"@constants": ["src/constants"],
+			"@health-check/*": ["src/health-check/*"],
+			"@handlers/*": ["src/handlers/*"],
+			"@interfaces": ["src/interfaces"],
+			"@interfaces/*": ["src/interfaces/*"],
+			"@entities": ["src/entities"],
+			"@entities/*": ["src/entities/*"],
+			"@enums": ["src/enums"],
+			"@enums/*": ["src/enums/*"],
+			"@modules/*": ["src/modules/*"],
+			"@types": ["src/types"],
+			"@mock-test-data": ["src/mock-test-data"],
+			"@utils/*": ["src/utils/*"],
+			"@utils": ["src/utils"]
+		}
+	}
+}

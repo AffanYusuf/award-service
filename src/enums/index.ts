@@ -1,0 +1,1 @@
+export {AwardTypeEnum} from './award-type.enum';
