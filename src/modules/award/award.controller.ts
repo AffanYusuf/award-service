@@ -18,7 +18,7 @@ export class AwardController {
 
     @Get('awards')
     @UseGuards(JwtAuthGuard)
-	public async searchItems(
+	public async awards(
 		@Query() queryParams: AwardsRequestDto,
 	): Promise<BaseResponse<AwardsResponseDto>> {
 		const {limit, page, ...params} = queryParams;

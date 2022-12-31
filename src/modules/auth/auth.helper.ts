@@ -11,7 +11,6 @@ export class AuthHelper {
 
 	constructor(private jwt: JwtService) {}
 
-	// Decoding the JWT Token
 	public async decodeToken(token: string): Promise<unknown> {
 		try {
 			return this.jwt.decode(token, null);
@@ -21,7 +20,6 @@ export class AuthHelper {
 		}
 	}
 
-	// Get User by User ID we get from decode()
 	public async validateUser(decoded: any): Promise<UsersEntity> {
 		try {
 			return this.usersEntity.findOneBy({id: decoded.id});
@@ -31,7 +29,6 @@ export class AuthHelper {
 		}
 	}
 
-	// Generate JWT Token
 	public generateToken(user: UsersEntity): string {
 		try {
 			const {id, email} = user;

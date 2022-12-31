@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { AwardsEntity, UsersEntity } from '@entities';
 import { BaseResponse, DefaultResponse } from '@utils';
 import { IPaginationOptions, paginate } from 'nestjs-typeorm-paginate';
-import { Between, Repository } from 'typeorm';
+import { Between, In, Repository } from 'typeorm';
 import { AwardsRequestDto, AwardsResponseDto, LoginRequestDto, LoginResponseDto } from './dto';
 import { AuthHelper } from '@modules/auth/auth.helper';
 
@@ -57,8 +57,8 @@ export class AwardService {
 		if (pointFrom && pointTo) {
 			where['point'] = Between(Number(pointFrom), Number(pointTo));
 		}
-		if (type && type != 'ALL') {
-			where['type'] = type;
+		if (type && !type.includes('ALL')) {
+			where['type'] = In(type);
 		}
 		return where;
 	}

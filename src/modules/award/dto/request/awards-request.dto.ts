@@ -12,5 +12,5 @@ export class AwardsRequestDto extends BaseRequest {
 
 	@IsString()
 	@IsOptional()
-	type?: string;
+	type?: string[];
 }
