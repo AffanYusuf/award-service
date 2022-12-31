@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "da4ba956-84fb-47ed-b3b8-06a4a96e268e",
+		"name": "Award Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7018359"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"cinta@member.id\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/award-service/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"award-service",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Awards",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaW50YUBtZW1iZXIuaWQiLCJpYXQiOjE2NzIzMzc1NjUsImV4cCI6MTY3MjM0NDc2NX0.R-TQ4xJ-rE6Kki7iRAX2TBy9vPYc2umqH7n2niLADlM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/award-service/awards",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"award-service",
+						"awards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
