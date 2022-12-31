@@ -1,4 +1,4 @@
-import {ADMIN_USER} from '@mock-test-data';
+import {USER} from '@mock-test-data';
 import {Test, TestingModule} from '@nestjs/testing';
 
 import {JwtAuthGuard} from './auth.guard';
@@ -26,8 +26,8 @@ describe('JwtAuthGuard', () => {
 	});
 
 	test('handleRequest', () => {
-		expect(guard.handleRequest(undefined, ADMIN_USER)).toStrictEqual(
-			ADMIN_USER,
+		expect(guard.handleRequest(undefined, USER)).toStrictEqual(
+			USER,
 		);
 	});
 });

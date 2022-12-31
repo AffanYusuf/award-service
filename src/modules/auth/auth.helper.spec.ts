@@ -1,5 +1,5 @@
-import {AdminUsersEntity} from '@entities';
-import {ADMIN_USER} from '@mock-test-data';
+import {UsersEntity} from '@entities';
+import {USER} from '@mock-test-data';
 import {JwtService} from '@nestjs/jwt';
 import {Test, TestingModule} from '@nestjs/testing';
 import {getRepositoryToken} from '@nestjs/typeorm';
@@ -26,7 +26,7 @@ describe('AuthHelper', () => {
 					useValue: mockJwtService,
 				},
 				{
-					provide: getRepositoryToken(AdminUsersEntity),
+					provide: getRepositoryToken(UsersEntity),
 					useValue: mockAdminUserEntity,
 				},
 			],
@@ -45,14 +45,14 @@ describe('AuthHelper', () => {
 	});
 
 	test('validateAdminUser', async () => {
-		mockAdminUserEntity.findOneBy.mockImplementation(() => ADMIN_USER);
-		await expect(helper.validateAdminUser('string')).resolves.toStrictEqual(
-			ADMIN_USER,
+		mockAdminUserEntity.findOneBy.mockImplementation(() => USER);
+		await expect(helper.validateUser('string')).resolves.toStrictEqual(
+			USER,
 		);
 	});
 
 	test('generateToken', () => {
 		mockJwtService.sign.mockImplementation(() => 'string');
-		expect(helper.generateToken(ADMIN_USER)).toBe('string');
+		expect(helper.generateToken(USER)).toBe('string');
 	});
 });

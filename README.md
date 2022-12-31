@@ -26,6 +26,9 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## INFO !
+- Use Node Version 19.3.0
+
 ## Preparation
 
 - Create Database MySQL first
